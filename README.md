@@ -1,2 +1,2 @@
 # WarehouseScanner
-C++/CLI GUI app designed to streamline the process of tallying product weights in a warehouse
+C++/CLI GUI app designed to streamline the process of tallying product weights in a warehouse. This application was developed to meet the demand for rapid summation of product weights. Featuring a simple and reliable GUI, it provides functionality for product recognition, column editing, and weight extraction from both EAN-13 and EAN-20 barcode standards. The application is designed to be compatible with barcode scanners from various manufacturers. Please note that this project is still under active development, with ongoing improvements and enhancements in progress.
