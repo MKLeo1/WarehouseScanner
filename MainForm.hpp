@@ -42,9 +42,9 @@ namespace ScannerProject {
 		}
 	private:
 
-    List<String^>^ scannedCodesList;
+        List<String^>^ scannedCodesList;
 	List<float>^ productsWeightList;
-    Dictionary<String^, String^>^ databaseDictionary;
+        Dictionary<String^, String^>^ databaseDictionary;
 
 	System::Void MainForm_Load(System::Object^, System::EventArgs^);
 	System::Void ButtonExit_Click(System::Object^, System::EventArgs^);
@@ -84,7 +84,7 @@ namespace ScannerProject {
 	System::Windows::Forms::DataGridView^ ProductsTable;
 	System::Windows::Forms::Button^ ButtonReset;
 	System::Windows::Forms::Button^ ButtonExit;
-    System::Windows::Forms::Button^ ButtonUndo;
+        System::Windows::Forms::Button^ ButtonUndo;
 	System::Windows::Forms::CheckBox^ AutoReset;
 	System::Windows::Forms::TextBox^ CurrentProductBox;	
 	System::Windows::Forms::TextBox^ WeightSumBox;
@@ -157,7 +157,7 @@ namespace ScannerProject {
 			this->ButtonExit->Name = L"ButtonExit";
 			this->ButtonExit->Size = System::Drawing::Size(300, 129);
 			this->ButtonExit->TabIndex = 3;
-			this->ButtonExit->Text = L"Wy³¹cz aplikacje";
+			this->ButtonExit->Text = L"WyÂ³Â¹cz aplikacje";
 			this->ButtonExit->UseVisualStyleBackColor = true;
 			this->ButtonExit->Click += gcnew System::EventHandler(this, &MainForm::ButtonExit_Click);
 			// 
@@ -228,7 +228,6 @@ namespace ScannerProject {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ProductsTable))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
 #pragma endregion
 };
