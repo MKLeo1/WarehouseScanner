@@ -2,25 +2,15 @@
 
 namespace ScannerProject {
 
-	using namespace System;
-	using namespace System::ComponentModel;
-	using namespace System::Collections;
-	using namespace System::Collections::Generic;
-	using namespace System::Windows::Forms;
-	using namespace System::Data;
-	using namespace System::Drawing;
-	using namespace System::Timers;
-	using namespace System::Threading;
-
 	public ref class MainForm : public System::Windows::Forms::Form
 	{
 	public:
 		MainForm(void)
 		{
 			InitializeComponent();
-			scannedCodesList = gcnew List<String^>();
-			productsWeightList = gcnew List<float>();
-			databaseDictionary = gcnew Dictionary<String^, String^>();
+			scannedCodesList = gcnew System::Collections::Generic::List<System::String^>();
+			productsWeightList = gcnew System::Collections::Generic::List<float>();
+			databaseDictionary = gcnew System::Collections::Generic::Dictionary<System::String^, System::String^>();
 
 			inputDelayTimer = gcnew System::Timers::Timer();
 			inputDelayTimer->Interval = 500;
@@ -42,9 +32,9 @@ namespace ScannerProject {
 		}
 	private:
 
-        List<String^>^ scannedCodesList;
-	List<float>^ productsWeightList;
-        Dictionary<String^, String^>^ databaseDictionary;
+		System::Collections::Generic::List<System::String^>^ scannedCodesList;
+		System::Collections::Generic::List<float>^ productsWeightList;
+		System::Collections::Generic::Dictionary<System::String^, System::String^>^ databaseDictionary;
 
 	System::Void MainForm_Load(System::Object^, System::EventArgs^);
 	System::Void ButtonExit_Click(System::Object^, System::EventArgs^);
@@ -68,15 +58,15 @@ namespace ScannerProject {
 	System::ComponentModel::Container ^components;
 
 	float SumAllWeight();
-	float ExtractWeight(String^);
+	float ExtractWeight(System::String^);
 	void AddCodeToContainers();
 	void ResetForm();
 	void RefreshDisplay();
 	void UpdateProductsTable();
 	void LoadDatabase();
 	void SetFocusToCodeInputBox();
-	String^ RecognizeCode(String^);
-	String^ FormatWeight(float);
+	System::String^ RecognizeCode(System::String^);
+	System::String^ FormatWeight(float);
 
 	System::Timers::Timer^ autoResetTimer;
 	System::Timers::Timer^ inputDelayTimer;
@@ -84,7 +74,7 @@ namespace ScannerProject {
 	System::Windows::Forms::DataGridView^ ProductsTable;
 	System::Windows::Forms::Button^ ButtonReset;
 	System::Windows::Forms::Button^ ButtonExit;
-        System::Windows::Forms::Button^ ButtonUndo;
+    System::Windows::Forms::Button^ ButtonUndo;
 	System::Windows::Forms::CheckBox^ AutoReset;
 	System::Windows::Forms::TextBox^ CurrentProductBox;	
 	System::Windows::Forms::TextBox^ WeightSumBox;
@@ -157,7 +147,7 @@ namespace ScannerProject {
 			this->ButtonExit->Name = L"ButtonExit";
 			this->ButtonExit->Size = System::Drawing::Size(300, 129);
 			this->ButtonExit->TabIndex = 3;
-			this->ButtonExit->Text = L"WyÂ³Â¹cz aplikacje";
+			this->ButtonExit->Text = L"Wy³¹cz aplikacje";
 			this->ButtonExit->UseVisualStyleBackColor = true;
 			this->ButtonExit->Click += gcnew System::EventHandler(this, &MainForm::ButtonExit_Click);
 			// 
@@ -228,6 +218,7 @@ namespace ScannerProject {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ProductsTable))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
+
 		}
 #pragma endregion
 };
