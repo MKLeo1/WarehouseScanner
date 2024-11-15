@@ -26,8 +26,8 @@ void ScannerProject::MainForm::MainForm_Load(System::Object^ sender, System::Eve
 
 	LoadDatabase();
 
-	// !Char::IsDigit
-	CodeInputBox->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MainForm::CodeInputBox_KeyPress);
+	
+	CodeInputBox->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MainForm::CodeInputBox_KeyPress); // !Char::IsDigit
 	CodeInputBox->TextChanged += gcnew System::EventHandler(this, &MainForm::CodeInputBox_TextChanged);
 	CodeInputBox->LostFocus += gcnew System::EventHandler(this, &MainForm::CodeInputBox_LostFocus);
 	CodeInputBox->GotFocus += gcnew System::EventHandler(this, &MainForm::CodeInputBox_GotFocus);
@@ -302,7 +302,7 @@ System::String^ ScannerProject::MainForm::RecognizeCode(System::String^ scannedC
 	return recognizedProduct;
 }
 
-void ScannerProject::MainForm::LoadDatabase() {
+void ScannerProject::MainForm::LoadDatabase() { // Simple .txt reader. Ultimately, there will be access to the SQL database here 
 	try {
 		System::IO::StreamReader^ inputFile = gcnew System::IO::StreamReader("Insert/here/path/to/database");
 		if (!inputFile) {
